@@ -1,17 +1,31 @@
 #tabstrip_here {
     position: absolute;
-    width: 200px;
+    width: 100px;
     background-color: gray;
     color:white;
-    height:500px;
+    height:700px;
     top: 10px;
     left:10px;
-    border: 3px solid black;
+    border: 1px black;
     border-radius: 3px;
 }
 
+#taskcreator_here {
+    position: absolute;
+    margin: 0 0 0 300px;
+    width: 150px;
+    height:700px;
+    top: 10px;
+    border: 1px black;
+    border-radius: 3px;
+}
+
+#tasktextlabel {
+    cursor: hand;
+}
+
 #scheduler_here {
-    margin: 0 0 0 200px;
+    margin: 0 0 0 500px;
     width: 800px;
     height:500px;
     top: 10px;
