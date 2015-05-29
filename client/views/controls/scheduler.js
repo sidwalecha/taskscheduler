@@ -16,7 +16,7 @@
 
      function droptargetOnDrop(e) {
 
-         var drop = scheduler.getActionData(event);
+         var drop = scheduler.getActionData(e);
 
          //node is dropped on a valid scheduler date
          if (drop.date) {
