@@ -2,6 +2,13 @@
 
     scheduler.init("scheduler_here", new Date(), "week");
 
+     var taskCursor = Tasks.find();
+     taskCursor.forEach(function(task) {
+         scheduler.parse([
+             {text: task.name, start_date: task.startdate, end_date: task.enddate}
+         ], "json");
+     });
+
      $("#scheduler_here").kendoDropTarget({
          dragenter: droptargetOnDragEnter,
          dragleave: droptargetOnDragLeave,
@@ -23,6 +30,11 @@
              scheduler.parse([
                  {text: e.target.innerText, start_date: drop.date, end_date: new Date(drop.date.getTime() + 60)}
              ], "json");
+             Tasks.insert({
+                 name: e.target.innerText,
+                 startdate: drop.date,
+                 enddate: new Date(drop.date.getTime() + 60)
+             });
          }
      }
   }
